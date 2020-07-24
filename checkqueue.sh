@@ -50,8 +50,8 @@ if [ $total = true ]
 then
 
     # get nicely formatted sinfo
-    format_total="NodeList:.9,Nodes:.6,CPUs:.5,Gres:.11,Memory:.7,"`
-                  `"StateLong:.10,Features:.15"
+    format_total="NodeList:.9,Nodes:.6,CPUs:.5,Gres:.11,"`
+                  `"Memory:.7,Features:.15"
 
     # query, divide memory by 100 so is in GB
     queue_total=$(sinfo -p $pname -N -O "$format_total" |
