@@ -1,8 +1,8 @@
 # readme
 
-Here are a couple of scripts to facilitate monitoring on quest (which currently uses slurm 18)
+Here are a couple of scripts to facilitate monitoring on quest (which currently uses slurm 18). All memory units are in GB.
 
-## `checkqueue.sh`
+### `checkqueue.sh`
 
 formats sinfo/squeue commands to check what resources are available on a partition, both in total and right now. includes a blame option that prints jobs on the queue that have a time limit longer than 2 days.
 
@@ -16,7 +16,7 @@ formats sinfo/squeue commands to check what resources are available on a partiti
 - `checkqueue.sh XXXX` : same as `checkqueue.sh --now`
 - it is possible to use multiple options; results will just print one after the other in the order: total, now, blame
 
-## `checkstorage.sh`
+### `checkstorage.sh`
 
 queries storage available for a particular allocation. includes a blame function that prints disk usage one level down in a given allocation. 
 
