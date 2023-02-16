@@ -70,12 +70,12 @@ then
     # print full CPU usage 
     # (states prints: allocated/idle/other/total) 
     # (add GresUsed:.11 after Gres after they upgrade slurm)
-    format_now="NodeList:.9,StateLong:.11,Nodes:.7,CPUsState:.15,Gres:.15,"`
-                `"FreeMem:.11,Memory:.7,Features:.15"
+    format_now="NodeList:.9,StateLong:.11,Nodes:.7,CPUsState:.15,Gres:.17,"`
+                `"AllocMem:.11,FreeMem:.11,Memory:.7,Features:.15"
     
     # divide memory columns by 1000 to show in GB (keeping header)
     queue_now=$(sinfo -p $pname -N -O "$format_now" |
-                awk -F " " 'NR==1; NR>1{$6=$6/1000;$7=$7/1000;print}' ) 
+                awk -F " " 'NR==1; NR>1{$6=$6/1000;$7=$7/1000;$8=$8/1000;print}' ) 
 
     # check if there are gpus in this partition
     queue_gres=$(sinfo -p $pname -N -O "Gres" | grep -c "gpu" ) 
